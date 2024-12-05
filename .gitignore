@@ -1,2 +1,5 @@
 ## ビルド関連
 *build*/
+
+## clangd関連
+.cache/
