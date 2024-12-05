@@ -10,6 +10,11 @@ option(BUILD_TESTING "Building tests." OFF)
 # インストール周りの設定
 option(CMAKE_INSTALL_PREFIX "Install prefix." "$ENV{HOME}/.local")
 
+# CMAKE_EXPORT_COMPILE_COMMANDSの既定値を設定する
+if ((NOT (DEFINED $ENV{CMAKE_EXPORT_COMPILE_COMMANDS})) AND (DEFINED CMAKE_EXPORT_COMPILE_COMMANDS))
+  set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
+endif()
+
 #ライブラリを追加
 add_library(sig_event)
 
