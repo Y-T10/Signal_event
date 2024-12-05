@@ -1,3 +1,15 @@
+cmake_minimum_required(VERSION 3.28.3)
+
+project(sig_event VERSION 0.0.0 LANGUAGES CXX)
+
+# ビルド周りの設定
+option(BUILD_SHARED_LIBS "Build shared libraries." OFF)
+option(CMAKE_BUILD_TYPE "Build type." Release)
+option(BUILD_TESTING "Building tests." OFF)
+
+# インストール周りの設定
+option(CMAKE_INSTALL_PREFIX "Install prefix." "$ENV{HOME}/.local")
+
 #ライブラリを追加
 add_library(sig_event)
 
