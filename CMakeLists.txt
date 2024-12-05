@@ -15,8 +15,15 @@ if ((NOT (DEFINED $ENV{CMAKE_EXPORT_COMPILE_COMMANDS})) AND (DEFINED CMAKE_EXPOR
   set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
 endif()
 
-#ライブラリを追加
-add_library(sig_event)
+## ライブラリターゲットの定義
+add_library(${PROJECT_NAME})
+add_library("${PROJECT_NAME}::${PROJECT_NAME}" ALIAS ${PROJECT_NAME})
+
+## ターゲットのコンパイルオプションの設定
+target_compile_options(${PROJECT_NAME} PRIVATE -Wall $<$<CONFIG:Debug>:-g3>)
+set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_SCAN_FOR_MODULES OFF)
+set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_EXTENSIONS ON)
+set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 20)
 
 #プログラムファイルを追加
 # - ${CMAKE_CURRENT_SOURCE_DIR}: このファイルがあるディレクトリ
