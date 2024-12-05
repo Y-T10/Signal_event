@@ -27,5 +27,5 @@ set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 20)
 
 #プログラムファイルを追加
 # - ${CMAKE_CURRENT_SOURCE_DIR}: このファイルがあるディレクトリ
-target_sources(${PROJECT_NAME} PRIVATE sig_event.cpp)
-target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_sources(${PROJECT_NAME} PRIVATE src/sig_event.cpp)
