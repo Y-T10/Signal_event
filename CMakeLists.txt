@@ -29,6 +29,3 @@ set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 20)
 # - ${CMAKE_CURRENT_SOURCE_DIR}: このファイルがあるディレクトリ
 target_sources(${PROJECT_NAME} PRIVATE sig_event.cpp)
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
-
-#ライブラリを追加
-#target_link_libraries(sig_event PRIVATE)
